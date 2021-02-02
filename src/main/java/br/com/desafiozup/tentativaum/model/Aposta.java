@@ -10,10 +10,8 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-
-@Data
 @Entity
-public class Aposta {
+@Data public class Aposta { 
 
 	
 	@Id
