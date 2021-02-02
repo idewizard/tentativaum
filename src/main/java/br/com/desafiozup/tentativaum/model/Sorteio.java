@@ -10,22 +10,20 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-
 @Data
 @Entity
-public class Aposta {
+public class Sorteio {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column( name = "id_aposta")
+	@Column(name = "id_sorteio")
 	private long id;
 	
-	@Column( name = "data_aposta")
-	private Date dataAposta;
+	@Column( name = "data_sorteio")
+	private Date dataSorteio;
 	
-	@Column( name = "numeros_sorteados", nullable = false)
-	private String numerosSorteados;
+	@Column( name = "resultado_sorteio")
+	private String resultadoSorteio;
 	
 	
 	
