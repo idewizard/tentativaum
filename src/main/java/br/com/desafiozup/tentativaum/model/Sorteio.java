@@ -2,7 +2,7 @@ package br.com.desafiozup.tentativaum.model;
 
 import java.sql.Date;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -22,8 +22,7 @@ public class Sorteio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_sorteio")
-	private long id;
-	
+	private long id;	
 	
 	@Column( name = "data_sorteio", nullable = false)
 	private Date dataSorteio;
@@ -31,9 +30,8 @@ public class Sorteio {
 	@Column( name = "resultado_sorteio", nullable = false)
 	private String resultadoSorteio;
 	
-	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_idtipo_aposta") ,
-	nullable = false)
+	@OneToOne(cascade = CascadeType.ALL )
+	@JoinColumn(name = "fk_idtipo_aposta" )	
 	private TipoAposta tipoAposta;
 	
 	

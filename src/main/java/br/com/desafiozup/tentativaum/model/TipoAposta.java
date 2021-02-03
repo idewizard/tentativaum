@@ -2,11 +2,13 @@ package br.com.desafiozup.tentativaum.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -24,7 +26,8 @@ public class TipoAposta {
 	@Column(name = "tipo_aposta")
 	private String tipoAposta;
 	
-	@OneToMany(mappedBy = "tipoAposta")
-    private List<Sorteio> sorteio;
+	@OneToOne(mappedBy = "tipoAposta")
+    private Sorteio sorteio;
+	
 	
 }
