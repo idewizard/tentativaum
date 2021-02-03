@@ -30,8 +30,8 @@ public class Sorteio {
 	@Column( name = "resultado_sorteio", nullable = false)
 	private String resultadoSorteio;
 	
-	@OneToOne(cascade = CascadeType.ALL )
-	@JoinColumn(name = "fk_idtipo_aposta" )	
+	@OneToOne(cascade = CascadeType.ALL, optional = false )
+	@JoinColumn(name = "fk_idtipo_aposta", foreignKey = @ForeignKey(name = "fk_idtipo_aposta"))	
 	private TipoAposta tipoAposta;
 	
 	
