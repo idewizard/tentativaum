@@ -36,5 +36,3 @@ public class Sorteio {
 	
 	
 }
-
-//, name = "tipo_aposta_idtipo_aposta"

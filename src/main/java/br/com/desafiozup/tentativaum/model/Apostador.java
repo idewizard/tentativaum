@@ -23,7 +23,7 @@ public class Apostador {
 	@Column( name = "id_apostador")
 	private long id;
 	
-	@Column( name = "nome")
+	@Column( name = "nome" , nullable = false)
 	private String nome;
 	
 	@Column( name = "sobrenome")
